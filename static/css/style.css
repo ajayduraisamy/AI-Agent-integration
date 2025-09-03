@@ -1,0 +1,80 @@
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.animate-title {
+    background: linear-gradient(90deg, white, white, orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+.btn-gradient {
+    background: linear-gradient(90deg, black, #ff8a00);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #ff8a00);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.text-gradient {
+    background: linear-gradient(90deg, #ff8a00, #e52e71, #9b00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+input.form-control {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+}
+
+input.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+p {
+    font-size: 1.1rem;
+}

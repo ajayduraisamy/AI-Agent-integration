@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGPT - AI Instructor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="container py-5">
+
+        <h1 class="text-center mb-5 animate-title">EduGPT - Your AI Instructor <i class="fas fa-robot"></i></h1>
+
+        <!-- Generate Syllabus -->
+        <div class="glass-card mb-5 p-4 shadow">
+            <form method="POST">
+                <input type="hidden" name="action" value="generate_syllabus">
+                <div class="mb-3">
+                    <label for="topic" class="form-label">Enter topic you want to learn:</label>
+                    <input type="text" name="topic" id="topic" class="form-control form-control-lg"
+                        placeholder="e.g., Artificial Intelligence" required>
+                </div>
+                <button type="submit" class="btn btn-gradient btn-lg w-100">Generate Syllabus</button>
+            </form>
+        </div>
+
+        {% if syllabus %}
+        <!-- Display Syllabus -->
+        <div class="glass-card mb-4 p-4 shadow">
+            <h4 class="text-gradient">Generated Syllabus:</h4>
+            <p>{{ syllabus }}</p>
+        </div>
+
+        <!-- Ask Instructor -->
+        <div class="glass-card mb-4 p-4 shadow">
+            <form method="POST">
+                <input type="hidden" name="action" value="ask_instructor">
+                <div class="mb-3">
+                    <label for="question" class="form-label">Ask your instructor:</label>
+                    <input type="text" name="question" id="question" class="form-control form-control-lg"
+                        placeholder="Type your question..." required>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg w-100">Ask Instructor <i
+                        class="fas fa-lightbulb"></i></button>
+            </form>
+        </div>
+        {% endif %}
+
+        {% if answer %}
+        <div class="glass-card mb-4 p-4 shadow">
+            <h4 class="text-gradient">Instructor Answer:</h4>
+            <p>{{ answer }}</p>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
