@@ -15,19 +15,7 @@ Premium AI Integration: Uses Google Gemini Flash for fast and high-quality respo
 
 
 
-Project Structure
 
-AI-Agent-integration/
-│
-├── app.py                 # Main Flask application
-├── agents.py              # AI agent classes (RolePlayingAgent)
-├── templates/
-│   └── index.html         # Single-page frontend
-├── static/
-│   └── css/
-│       └── style.css      # Styling for UI
-├── requirements.txt       # Python dependencies
-└── .env                   # Environment variables (API keys)
 
 
 Installation
@@ -76,31 +64,6 @@ Open your browser and go to:
 
 http://127.0.0.1:5000/
 
-
-Steps in the app:
-
-Enter a topic and click Generate Syllabus.
-
-View the AI-generated syllabus.
-
-Ask questions to the instructor based on the syllabus.
-
-
-Dependencies
-
-Flask
-
-python-dotenv
-
-langchain
-
-langchain-google-genai
-
-google-genai
-
-google-api-core
-
-tenacity
 
 License
 
